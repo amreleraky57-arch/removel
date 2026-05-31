@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — ClearFrame AI</title>
+  <meta name="description" content="Learn about ClearFrame AI — a free, privacy-first AI watermark remover built for everyone." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://clearframe.ai/about.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" type="image/svg+xml" href="img/logo.svg" />
+</head>
+<body>
+<div class="bg-grid" aria-hidden="true"></div>
+<div class="orb orb-1" aria-hidden="true"></div>
+<div class="orb orb-2" aria-hidden="true"></div>
+
+<nav role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo"><div class="nav-logo-icon" aria-hidden="true">✦</div>ClearFrame AI</a>
+    <ul class="nav-links" role="list">
+      <li><a href="/#features">Features</a></li>
+      <li><a href="/#faq">FAQ</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="/" class="nav-cta">Open Editor</a>
+  </div>
+</nav>
+
+<main>
+  <div class="page-hero">
+    <span class="section-label" style="display:block;margin-bottom:1rem;">Our Story</span>
+    <h1>Built for People Who Value Privacy</h1>
+    <p>ClearFrame AI was created because people deserve tools that respect their data — not exploit it.</p>
+  </div>
+
+  <div class="prose">
+    <h2>Why We Built This</h2>
+    <p>Most online image editors require you to upload your photos to remote servers. That means your private images — personal photos, client work, confidential documents — sit on someone else's computer. We think that's a problem.</p>
+    <p>ClearFrame AI is different. We built the entire processing pipeline to run directly in your browser. The WebGL-accelerated canvas API handles everything locally. Your images never leave your device.</p>
+
+    <h2>The Technology</h2>
+    <p>Our watermark removal engine uses an alpha-blending reversal algorithm combined with a diffusion-based inpainting system. When you click "Remove," the engine:</p>
+    <ul>
+      <li>Analyzes the watermark's transparency pattern (alpha channel)</li>
+      <li>Applies reverse alpha-blending mathematics to recover the original pixel values</li>
+      <li>Uses a multi-pass diffusion inpainting algorithm to fill any remaining gaps</li>
+      <li>Applies subtle noise to prevent visible reconstruction artifacts</li>
+    </ul>
+    <p>For the manual brush mode, the Telea inpainting algorithm reconstructs masked regions based on surrounding pixel context.</p>
+
+    <h2>Our Principles</h2>
+    <p><strong>Free, forever.</strong> We believe basic image editing tools should be universally accessible. ClearFrame AI is and will remain free to use with no limits.</p>
+    <p><strong>Privacy by default.</strong> We will never add server-side processing that requires uploading your images. If we can't do it in the browser, we won't do it.</p>
+    <p><strong>Honest about limitations.</strong> Watermark removal is a hard problem. Results vary by image. We won't promise perfect results on every image — but we'll keep making the engine better.</p>
+
+    <h2>Contact</h2>
+    <p>Questions, feedback, or bug reports? <a href="contact.html">Get in touch</a>.</p>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-bottom" style="border-top:none;padding-top:0;">
+      <span>© 2026 ClearFrame AI. <a href="privacy.html" style="color:var(--accent2);text-decoration:none;">Privacy</a> · <a href="terms.html" style="color:var(--accent2);text-decoration:none;">Terms</a></span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

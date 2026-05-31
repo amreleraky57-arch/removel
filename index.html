@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+
+  <!-- ─── SEO ─── -->
+  <title>ClearFrame AI — Free AI Watermark Remover | Remove Watermarks Instantly</title>
+  <meta name="description" content="ClearFrame AI removes watermarks from any image in seconds — 100% free, no signup, no upload limits. Powered by AI, runs entirely in your browser. Works with PNG, JPG, WebP and more." />
+  <meta name="keywords" content="AI watermark remover, free watermark remover, remove watermark from image, remove logo from image, AI image cleaner, browser watermark remover, online watermark removal, photo cleaner, image watermark eraser" />
+  <meta name="author" content="ClearFrame AI" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://clearframe.ai/" />
+
+  <!-- ─── Open Graph ─── -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="ClearFrame AI" />
+  <meta property="og:title" content="ClearFrame AI — Remove Watermarks from Any Image, Free" />
+  <meta property="og:description" content="AI-powered watermark removal that runs in your browser. No uploads, no servers, no subscriptions. Completely private and free." />
+  <meta property="og:url" content="https://clearframe.ai/" />
+  <meta property="og:image" content="https://clearframe.ai/img/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- ─── Twitter ─── -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="ClearFrame AI — Free AI Watermark Remover" />
+  <meta name="twitter:description" content="Remove watermarks from any image in seconds. No signup. No uploads. Runs locally in your browser." />
+  <meta name="twitter:image" content="https://clearframe.ai/img/og-image.jpg" />
+
+  <!-- ─── JSON-LD Structured Data ─── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "ClearFrame AI",
+    "url": "https://clearframe.ai",
+    "description": "Free AI-powered watermark remover that runs entirely in your browser. No uploads, no registration required.",
+    "applicationCategory": "MultimediaApplication",
+    "operatingSystem": "Any",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": [
+      "AI Watermark Detection",
+      "Brush Masking Tool",
+      "Undo Support",
+      "Before/After Comparison",
+      "PNG Export",
+      "No Upload Required",
+      "Privacy First"
+    ]
+  }
+  </script>
+
+  <!-- ─── Fonts & Icons ─── -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- ─── Styles ─── -->
+  <link rel="stylesheet" href="./css/style.css" />
+
+  <!-- Favicon SVG -->
+  <link rel="icon" type="image/svg+xml" href="./img/logo.svg" />
+  
+  <style>
+    /* Active nav state styles */
+    .nav-links a.active {
+      color: var(--accent2);
+      font-weight: 600;
+    }
+    
+    .footer-col ul li a.active {
+      color: var(--accent2);
+    }
+    
+    /* Smooth scroll behavior */
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    /* Fallback protection */
+    .broken-link-fallback {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Background Effects -->
+<div class="bg-grid" aria-hidden="true"></div>
+<div class="orb orb-1" aria-hidden="true"></div>
+<div class="orb orb-2" aria-hidden="true"></div>
+<div class="orb orb-3" aria-hidden="true"></div>
+<div class="particles" aria-hidden="true"></div>
+
+<!-- Alert Toast -->
+<div id="alert-toast" class="alert-toast" role="alert" aria-live="polite"></div>
+
+<!-- ─── Navigation ─── -->
+<nav role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="./index.html" class="nav-logo" aria-label="ClearFrame AI Home">
+      <div class="nav-logo-icon" aria-hidden="true">✦</div>
+      ClearFrame AI
+    </a>
+
+    <ul class="nav-links" role="list">
+      <li><a href="./index.html#features">Features</a></li>
+      <li><a href="./index.html#how-it-works">How It Works</a></li>
+      <li><a href="./index.html#faq">FAQ</a></li>
+      <li><a href="./about.html">About</a></li>
+    </ul>
+
+    <a href="#" class="nav-cta" id="btn-open-editor" role="button">Open Editor</a>
+
+    <button class="nav-mobile-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="nav-mobile-menu" id="nav-mobile-menu" role="dialog" aria-label="Mobile navigation">
+  <a href="./index.html#features">Features</a>
+  <a href="./index.html#how-it-works">How It Works</a>
+  <a href="./index.html#faq">FAQ</a>
+  <a href="./about.html">About</a>
+  <a href="./privacy.html">Privacy</a>
+  <a href="#" id="btn-open-editor-mobile" style="color:var(--accent2)">Open Editor →</a>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     LANDING PAGE
+═══════════════════════════════════════════════════════ -->
+<main>
+
+  <!-- ─── Hero ─── -->
+  <section id="hero" aria-labelledby="hero-headline">
+    <div class="container">
+      <div class="hero-badge" aria-label="Free to use">
+        <span class="hero-badge-dot"></span>
+        Free — No Signup Required
+      </div>
+
+      <h1 class="hero-title" id="hero-headline">
+        Remove Watermarks<br />
+        <span class="grad">Instantly with AI</span>
+      </h1>
+
+      <p class="hero-sub">
+        Upload any image and ClearFrame AI detects and removes watermarks in seconds. Runs entirely in your browser — your images never leave your device.
+      </p>
+
+      <div class="hero-actions">
+        <button class="btn-primary" id="btn-open-editor-hero">
+          <i class="fas fa-magic"></i>
+          Remove Watermark Free
+        </button>
+        <a href="./index.html#how-it-works" class="btn-secondary">
+          <i class="fas fa-play-circle"></i>
+          See How It Works
+        </a>
+      </div>
+
+      <div class="hero-trust">
+        <span><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>No registration</span>
+        <span><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>No file uploads</span>
+        <span><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>100% private</span>
+        <span><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Unlimited use</span>
+      </div>
+
+      <!-- Upload Zone -->
+      <div class="upload-zone" id="hero-upload-zone" role="button" tabindex="0" aria-label="Upload image to remove watermark">
+        <div class="upload-icon" aria-hidden="true">⬆</div>
+        <div class="upload-title">Drag & drop your image here</div>
+        <div class="upload-sub">or click to browse your files · paste from clipboard</div>
+        <div class="upload-formats" aria-label="Supported formats">
+          <span>PNG</span><span>JPG</span><span>JPEG</span><span>WEBP</span><span>GIF</span><span>BMP</span>
+        </div>
+      </div>
+      <input type="file" id="hero-file-input" accept="image/*" style="display:none" aria-label="Choose image file" />
+    </div>
+  </section>
+
+  <!-- ─── Ad Slot ─── -->
+  <div class="container" style="padding: 0 2rem;">
+    <div class="ad-slot" aria-label="Advertisement">Advertisement</div>
+  </div>
+
+  <!-- ─── Before/After ─── -->
+  <section id="before-after" aria-labelledby="ba-headline">
+    <div class="container" style="text-align:center;">
+      <span class="section-label">Live Preview</span>
+      <h2 class="section-title reveal" id="ba-headline">See the Difference</h2>
+      <p class="section-sub reveal" style="margin: 0 auto 3rem;">ClearFrame AI analyzes your image and reconstructs the pixels beneath watermarks with precision.</p>
+
+      <div class="ba-wrapper reveal">
+        <div class="ba-container">
+          <span class="ba-label before">Before</span>
+          <span class="ba-label after">After</span>
+          <div class="ba-demo">
+            <div class="ba-demo-inner">
+              <div class="ba-half ba-half-before">
+                <div class="watermark-demo">
+                  <div class="watermark-demo-text">
+                    <div style="font-size:2rem;margin-bottom:8px;">🏔️</div>
+                    Sample Image
+                  </div>
+                  <div class="watermark-stamp">© WATERMARK</div>
+                </div>
+              </div>
+              <div class="ba-half ba-half-after">
+                <div class="watermark-demo">
+                  <div class="watermark-demo-text">
+                    <div style="font-size:2rem;margin-bottom:8px;">🏔️</div>
+                    Clean Image
+                  </div>
+                  <div class="clean-badge">✓ CLEAN</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Features ─── -->
+  <section id="features" aria-labelledby="features-headline">
+    <div class="container">
+      <span class="section-label">What You Get</span>
+      <h2 class="section-title reveal" id="features-headline">Built for Speed.<br />Designed for Privacy.</h2>
+      <p class="section-sub reveal">Every feature is built around one principle: you stay in control of your images.</p>
+
+      <div class="features-grid" role="list">
+        <div class="feature-card reveal" role="listitem">
+          <div class="feature-icon" aria-hidden="true">🧠</div>
+          <h3 class="feature-title">AI Detection Engine</h3>
+          <p class="feature-desc">Advanced alpha-blending algorithm detects and reconstructs the pixels hidden beneath watermarks with high fidelity.</p>
+        </div>
+        <div class="feature-card reveal" role="listitem">
+          <div class="feature-icon" aria-hidden="true">🔒</div>
+          <h3 class="feature-title">100% Private</h3>
+          <p class="feature-desc">All processing runs in your browser using WebGL canvas APIs. Your images are never uploaded to any server.</p>
+        </div>
+        <div class="feature-card reveal" role="listitem">
+          <div class="feature-icon" aria-hidden="true">🖌️</div>
+          <h3 class="feature-title">Manual Brush Tool</h3>
+          <p class="feature-desc">For complex watermarks, use the precision brush tool to manually mask any area and let the AI reconstruct it.</p>
+        </div>
+        <div class="feature-card reveal" role="listitem">
+          <div class="feature-icon" aria-hidden="true">↩️</div>
+          <h3 class="feature-title">Multi-Step Undo</h3>
+          <p class="feature-desc">Made a mistake? Step back through your full edit history with up to 20 undo states preserved.</p>
+        </div>
+        <div class="feature-card reveal" role="listitem">
+          <div class="feature-icon" aria-hidden="true">👁️</div>
+          <h3 class="feature-title">Before/After Compare</h3>
+          <p class="feature-desc">Hold the compare button to toggle between your original and cleaned image in real time.</p>
+        </div>
+        <div class="feature-card reveal" role="listitem">
+          <div class="feature-icon" aria-hidden="true">📤</div>
+          <h3 class="feature-title">Lossless PNG Export</h3>
+          <p class="feature-desc">Export your cleaned image as full-quality PNG with no recompression or quality loss.</p>
+        </div>
+        <div class="feature-card reveal" role="listitem">
+          <div class="feature-icon" aria-hidden="true">🖱️</div>
+          <h3 class="feature-title">Drag, Drop & Paste</h3>
+          <p class="feature-desc">Upload your image by dragging it in, pasting from clipboard (Ctrl+V), or loading via direct URL.</p>
+        </div>
+        <div class="feature-card reveal" role="listitem">
+          <div class="feature-icon" aria-hidden="true">📱</div>
+          <h3 class="feature-title">Fully Responsive</h3>
+          <p class="feature-desc">Works smoothly on desktop, tablet, and mobile. Touch-friendly controls with pinch-to-zoom support.</p>
+        </div>
+        <div class="feature-card reveal" role="listitem">
+          <div class="feature-icon" aria-hidden="true">⚡</div>
+          <h3 class="feature-title">Instant Processing</h3>
+          <p class="feature-desc">No waiting, no queues. Results appear in seconds because everything runs directly on your device.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── How It Works ─── -->
+  <section id="how-it-works" aria-labelledby="hiw-headline">
+    <div class="container">
+      <div style="text-align:center;">
+        <span class="section-label">Simple Process</span>
+        <h2 class="section-title reveal" id="hiw-headline">Three Steps to Clean</h2>
+        <p class="section-sub reveal" style="margin: 0 auto;">No learning curve. No settings to configure.</p>
+      </div>
+
+      <div class="steps">
+        <div class="step reveal">
+          <div class="step-num" aria-hidden="true">1</div>
+          <h3 class="step-title">Upload Your Image</h3>
+          <p class="step-desc">Drag and drop, paste from clipboard, or click to browse. Supports PNG, JPG, WebP, GIF, and more.</p>
+        </div>
+        <div class="step reveal">
+          <div class="step-num" aria-hidden="true">2</div>
+          <h3 class="step-title">Click Remove</h3>
+          <p class="step-desc">Hit the Remove button — AI auto-detects and removes the watermark. Or use the brush to target specific areas.</p>
+        </div>
+        <div class="step reveal">
+          <div class="step-num" aria-hidden="true">3</div>
+          <h3 class="step-title">Export Clean PNG</h3>
+          <p class="step-desc">Download your cleaned image as a full-quality PNG. No watermarks, no compression, no strings attached.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Supported Formats ─── -->
+  <section aria-labelledby="formats-headline">
+    <div class="container" style="text-align:center;">
+      <span class="section-label">Compatibility</span>
+      <h2 class="section-title reveal" id="formats-headline">Works with Any Image Format</h2>
+      <div class="formats-grid reveal" role="list">
+        <div class="format-pill" role="listitem">PNG</div>
+        <div class="format-pill" role="listitem">JPG / JPEG</div>
+        <div class="format-pill" role="listitem">WebP</div>
+        <div class="format-pill" role="listitem">GIF</div>
+        <div class="format-pill" role="listitem">BMP</div>
+        <div class="format-pill" role="listitem">AVIF</div>
+        <div class="format-pill" role="listitem">TIFF</div>
+        <div class="format-pill" role="listitem">SVG</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Ad Slot ─── -->
+  <div class="container" style="padding: 0 2rem 60px;">
+    <div class="ad-slot" aria-label="Advertisement">Advertisement</div>
+  </div>
+
+  <!-- ─── Testimonials ─── -->
+  <section id="testimonials" aria-labelledby="testimonials-headline">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:0;">
+        <span class="section-label">Loved By Users</span>
+        <h2 class="section-title reveal" id="testimonials-headline">What People Are Saying</h2>
+      </div>
+
+      <div class="testimonials-grid">
+        <article class="testimonial-card reveal">
+          <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p class="testimonial-text">"This is genuinely the best free watermark remover I've found. Runs instantly and never uploads my images anywhere."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" style="background:linear-gradient(135deg,#7c6fff,#a78bfa)" aria-hidden="true">S</div>
+            <div>
+              <div class="testimonial-name">Sarah M.</div>
+              <div class="testimonial-role">Freelance Designer</div>
+            </div>
+          </div>
+        </article>
+        <article class="testimonial-card reveal">
+          <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p class="testimonial-text">"Finally a tool that actually works and doesn't require an account. Removed a stubborn logo in about 3 seconds."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" style="background:linear-gradient(135deg,#34d399,#06b6d4)" aria-hidden="true">J</div>
+            <div>
+              <div class="testimonial-name">James K.</div>
+              <div class="testimonial-role">Content Creator</div>
+            </div>
+          </div>
+        </article>
+        <article class="testimonial-card reveal">
+          <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p class="testimonial-text">"I use this almost daily for client work. The privacy aspect is huge — no one else sees my client's images."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" style="background:linear-gradient(135deg,#f59e0b,#ef4444)" aria-hidden="true">A</div>
+            <div>
+              <div class="testimonial-name">Anna T.</div>
+              <div class="testimonial-role">Photo Editor</div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FAQ ─── -->
+  <section id="faq" aria-labelledby="faq-headline">
+    <div class="container">
+      <div style="text-align:center;">
+        <span class="section-label">Questions</span>
+        <h2 class="section-title reveal" id="faq-headline">Frequently Asked</h2>
+      </div>
+
+      <div class="faq-list" role="list">
+        <div class="faq-item" role="listitem">
+          <button class="faq-q" aria-expanded="false">
+            Is ClearFrame AI really free?
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+          </button>
+          <div class="faq-a">Yes, completely. There are no paid tiers, no hidden limits, and no credit card required. ClearFrame AI is free to use for everyone, unlimited.</div>
+        </div>
+        <div class="faq-item" role="listitem">
+          <button class="faq-q" aria-expanded="false">
+            Do my images get uploaded to your servers?
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+          </button>
+          <div class="faq-a">Never. All processing happens 100% in your browser using the HTML5 Canvas API. Your images are not sent to any server at any point. This is a core design principle, not just a feature.</div>
+        </div>
+        <div class="faq-item" role="listitem">
+          <button class="faq-q" aria-expanded="false">
+            What types of watermarks can it remove?
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+          </button>
+          <div class="faq-a">ClearFrame AI is optimized for semi-transparent overlay watermarks (like logos placed over images). For complex or opaque watermarks, use the manual brush tool to mark the area and let the AI reconstruct the region.</div>
+        </div>
+        <div class="faq-item" role="listitem">
+          <button class="faq-q" aria-expanded="false">
+            Will the output image lose quality?
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+          </button>
+          <div class="faq-a">The export is full-quality lossless PNG. The original resolution and color depth are preserved. No re-compression is applied.</div>
+        </div>
+        <div class="faq-item" role="listitem">
+          <button class="faq-q" aria-expanded="false">
+            Is it legal to remove watermarks from images?
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+          </button>
+          <div class="faq-a">It depends on the specific image and your usage. This tool is intended for personal use, editing your own images, removing watermarks from photos you have purchased or legally obtained. Removing watermarks from copyrighted material you don't own rights to may violate copyright law. Please use responsibly.</div>
+        </div>
+        <div class="faq-item" role="listitem">
+          <button class="faq-q" aria-expanded="false">
+            Does it work on mobile?
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+          </button>
+          <div class="faq-a">Yes. The editor is fully responsive with touch support for panning and zooming. Large images may process slower on lower-end mobile devices.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Privacy ─── -->
+  <section id="privacy" aria-labelledby="privacy-headline">
+    <div class="container">
+      <div style="text-align:center;">
+        <span class="section-label">Your Data</span>
+        <h2 class="section-title reveal" id="privacy-headline">Privacy by Design</h2>
+        <p class="section-sub reveal" style="margin: 0 auto 3rem;">We built the architecture around privacy from day one.</p>
+      </div>
+
+      <div class="privacy-cards">
+        <div class="privacy-card reveal">
+          <div class="icon" aria-hidden="true">🛡️</div>
+          <h3>Zero Server Storage</h3>
+          <p>Images never touch our servers. Everything processes on your machine via browser APIs.</p>
+        </div>
+        <div class="privacy-card reveal">
+          <div class="icon" aria-hidden="true">🔐</div>
+          <h3>No Tracking</h3>
+          <p>We use minimal analytics for site performance only. No behavioral tracking or ad profiles.</p>
+        </div>
+        <div class="privacy-card reveal">
+          <div class="icon" aria-hidden="true">📵</div>
+          <h3>No Account Needed</h3>
+          <p>No email, no password, no profile. Open the tool and use it instantly — forever.</p>
+        </div>
+        <div class="privacy-card reveal">
+          <div class="icon" aria-hidden="true">🌐</div>
+          <h3>Open Standard</h3>
+          <p>Built on standard web APIs — HTML5 Canvas, FileReader, ImageData. No proprietary dependencies.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CTA ─── -->
+  <section id="cta">
+    <div class="container">
+      <div class="cta-box reveal">
+        <h2>Ready to Clean Your Image?</h2>
+        <p>Free, instant, private. No account needed.</p>
+        <button class="btn-primary" id="btn-open-editor-cta">
+          <i class="fas fa-magic"></i>
+          Start Removing Watermarks
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Ad Slot ─── -->
+  <div class="container" style="padding: 0 2rem 60px;">
+    <div class="ad-slot" aria-label="Advertisement">Advertisement</div>
+  </div>
+
+</main>
+
+<!-- ─── Footer ─── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>✦ ClearFrame AI</h3>
+        <p>Free AI-powered watermark removal that runs entirely in your browser. No uploads, no registration, no limits.</p>
+        <div style="display:flex;gap:0.75rem;margin-top:1.25rem;" role="list" aria-label="Trust badges">
+          <span class="badge">✓ Free</span>
+          <span class="badge">✓ Private</span>
+          <span class="badge">✓ No Signup</span>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="./index.html#features">Features</a></li>
+          <li><a href="./index.html#how-it-works">How It Works</a></li>
+          <li><a href="./index.html#faq">FAQ</a></li>
+          <li><a href="#" id="footer-editor-link">Open Editor</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="./about.html">About</a></li>
+          <li><a href="./contact.html">Contact</a></li>
+          <li><a href="./privacy.html">Privacy Policy</a></li>
+          <li><a href="./terms.html">Terms of Use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Use Cases</h4>
+        <ul>
+          <li><a href="#">Remove AI Watermarks</a></li>
+          <li><a href="#">Remove Logo from Image</a></li>
+          <li><a href="#">Clean Stock Photos</a></li>
+          <li><a href="#">Restore Old Photos</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 ClearFrame AI. All rights reserved. Use responsibly.</span>
+      <div class="footer-badges">
+        <span>🌐 Runs in Browser</span>
+        <span>🔒 Privacy First</span>
+        <span>⚡ No Signup</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════════════════════════
+     EDITOR SECTION (fullscreen overlay)
+═══════════════════════════════════════════════════════ -->
+<section id="editor-section" aria-label="Image Editor" role="main">
+  <!-- Editor Nav -->
+  <header class="editor-nav">
+    <div class="editor-nav-left">
+      <button class="editor-back" id="btn-back" aria-label="Return to home page">
+        <i class="fas fa-arrow-left" aria-hidden="true"></i>
+        Back
+      </button>
+      <div class="divider" style="width:1px;height:20px;background:var(--border);"></div>
+      <span class="editor-filename" id="editor-filename" aria-live="polite">No image loaded</span>
+      <span class="editor-dims" id="editor-dims" aria-live="polite"></span>
+    </div>
+    <div class="editor-nav-right">
+      <button class="btn-secondary" id="btn-url" style="padding:6px 14px;font-size:0.78rem;" aria-label="Load image from URL">
+        <i class="fas fa-link" aria-hidden="true"></i> URL
+      </button>
+      <button class="btn-secondary" id="btn-open-file" style="padding:6px 14px;font-size:0.78rem;" aria-label="Open image file">
+        <i class="fas fa-folder-open" aria-hidden="true"></i> Open
+      </button>
+      <button class="btn-export" id="btn-export" disabled aria-label="Export cleaned image as PNG">
+        <i class="fas fa-download" aria-hidden="true"></i> Export PNG
+      </button>
+    </div>
+  </header>
+
+  <!-- Editor Body -->
+  <div class="editor-body">
+    <!-- Sidebar -->
+    <aside class="editor-sidebar" aria-label="Editor tools">
+      <button class="editor-tool-btn" id="btn-undo" disabled title="Undo (Ctrl+Z)" aria-label="Undo last action">
+        <i class="fas fa-rotate-left" aria-hidden="true"></i>
+      </button>
+      <button class="editor-tool-btn" id="btn-compare" title="Hold to compare with original" aria-label="Hold to compare with original">
+        <i class="fas fa-eye" aria-hidden="true"></i>
+      </button>
+    </aside>
+
+    <!-- Canvas Area -->
+    <div class="editor-canvas-area" id="editor-canvas-area" role="img" aria-label="Image canvas editor">
+      <!-- Empty State -->
+      <div class="editor-empty" id="editor-empty">
+        <div class="editor-upload-prompt" id="editor-upload-prompt" role="button" tabindex="0" aria-label="Click to upload image">
+          <div class="icon" aria-hidden="true">🖼️</div>
+          <p>Drop image here or click to browse</p>
+          <p style="margin-top:6px;font-size:0.75rem;">Supports PNG, JPG, WebP and more</p>
+        </div>
+      </div>
+
+      <!-- Canvas Stage -->
+      <div class="canvas-stage" id="canvas-stage" aria-label="Loaded image for editing">
+        <canvas id="main-canvas" aria-label="Main image canvas"></canvas>
+        <canvas id="mask-canvas" style="position:absolute;top:0;left:0;width:100%;height:100%;opacity:0.6;pointer-events:none;mix-blend-mode:screen;" aria-hidden="true"></canvas>
+      </div>
+
+      <!-- Bottom Controls -->
+      <div class="editor-bottom-bar" aria-label="Editor controls">
+        <div class="bottom-pill">
+          <button class="remove-btn" id="btn-remove" aria-label="Remove watermark from image">
+            <i class="fas fa-magic" aria-hidden="true"></i> Remove
+          </button>
+        </div>
+        <div class="bottom-pill zoom-pill" role="group" aria-label="Zoom controls">
+          <button class="zoom-btn" id="btn-zoom-out" aria-label="Zoom out">
+            <i class="fas fa-minus" aria-hidden="true"></i>
+          </button>
+          <span id="zoom-display" aria-live="polite">100%</span>
+          <button class="zoom-btn" id="btn-zoom-in" aria-label="Zoom in">
+            <i class="fas fa-plus" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <input type="file" id="editor-file-input" accept="image/*" style="display:none" aria-label="Choose image file" />
+</section>
+
+<!-- URL Modal -->
+<div class="modal-overlay" id="url-modal" role="dialog" aria-modal="true" aria-labelledby="url-modal-title">
+  <div class="modal-box">
+    <h3 id="url-modal-title">Load from URL</h3>
+    <p>Paste a direct image URL below. Note: CORS restrictions may block some URLs.</p>
+    <input class="modal-input" id="url-input" type="url" placeholder="https://example.com/image.jpg" autocomplete="off" aria-label="Image URL" />
+    <div class="modal-actions">
+      <button class="modal-cancel" id="url-cancel">Cancel</button>
+      <button class="modal-confirm" id="url-confirm">Load Image</button>
+    </div>
+  </div>
+</div>
+
+<!-- Scripts -->
+<script src="./js/watermark-remover.js"></script>
+<script src="./js/app.js"></script>
+<script>
+  // Navigation Helper - Set active nav state based on current page
+  function setActiveNavState() {
+    const currentPath = window.location.pathname;
+    const currentFile = currentPath.split('/').pop() || 'index.html';
+    
+    // Update nav links
+    document.querySelectorAll('.nav-links a, .footer-col ul li a').forEach(link => {
+      const href = link.getAttribute('href');
+      if (href && !href.startsWith('#')) {
+        const hrefFile = href.split('/').pop().split('#')[0];
+        if (hrefFile === currentFile) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      }
+    });
+  }
+  
+  // Fallback protection - handle broken routes
+  function handleBrokenRoutes() {
+    // Check if we're on a valid page
+    const validPages = ['index.html', 'about.html', 'privacy.html', 'terms.html', 'contact.html'];
+    const currentPath = window.location.pathname;
+    const currentFile = currentPath.split('/').pop() || 'index.html';
+    
+    // If not on a valid page, redirect to index.html
+    if (!validPages.includes(currentFile) && currentFile !== '') {
+      console.warn('Invalid route detected, redirecting to home');
+      window.location.href = './index.html';
+      return false;
+    }
+    return true;
+  }
+  
+  // Wire up editor-open buttons
+  function openEditorSafely(e) {
+    if (e) e.preventDefault();
+    if (typeof openEditor === 'function') {
+      openEditor();
+    } else {
+      console.warn('Editor function not ready yet');
+      // Fallback: try to initialize editor
+      if (typeof editor !== 'undefined' && editor.init) {
+        editor.init();
+      }
+    }
+  }
+  
+  // Smooth scroll for hash links
+  function setupSmoothScroll() {
+    document.querySelectorAll('a[href^="./index.html#"], a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const hash = this.getAttribute('href').split('#')[1];
+        if (hash && hash !== 'index.html') {
+          e.preventDefault();
+          const target = document.getElementById(hash);
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            history.pushState(null, null, `#${hash}`);
+          }
+        }
+      });
+    });
+  }
+  
+  // Handle back button from editor
+  function setupBackButton() {
+    const backBtn = document.getElementById('btn-back');
+    if (backBtn) {
+      backBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        // Close editor and return to home
+        const editorSection = document.getElementById('editor-section');
+        if (editorSection) {
+          editorSection.classList.remove('active');
+        }
+        // Navigate to home
+        window.location.href = './index.html';
+      });
+    }
+  }
+  
+  // DOM ready
+  document.addEventListener('DOMContentLoaded', () => {
+    // Handle broken routes first
+    if (!handleBrokenRoutes()) return;
+    
+    // Set active nav state
+    setActiveNavState();
+    
+    // Setup smooth scrolling
+    setupSmoothScroll();
+    
+    // Setup back button
+    setupBackButton();
+    
+    // Wire up editor open buttons
+    const editorButtons = [
+      'btn-open-editor-hero',
+      'btn-open-editor-cta', 
+      'btn-open-editor-mobile',
+      'footer-editor-link',
+      'btn-open-editor'
+    ];
+    
+    editorButtons.forEach(id => {
+      const btn = document.getElementById(id);
+      if (btn) {
+        btn.addEventListener('click', openEditorSafely);
+      }
+    });
+    
+    // Enable export when image loaded (patched from original)
+    if (typeof editor !== 'undefined' && editor.setup) {
+      const origSetup = editor.setup.bind(editor);
+      editor.setup = function(img) {
+        origSetup(img);
+        const exportBtn = document.getElementById('btn-export');
+        if (exportBtn) exportBtn.disabled = false;
+      };
+    }
+    
+    // Handle URL hash on load for smooth scrolling
+    if (window.location.hash) {
+      const hash = window.location.hash.substring(1);
+      const target = document.getElementById(hash);
+      if (target) {
+        setTimeout(() => {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100);
+      }
+    }
+    
+    // Mobile menu toggle
+    const navToggle = document.getElementById('nav-toggle');
+    const mobileMenu = document.getElementById('nav-mobile-menu');
+    if (navToggle && mobileMenu) {
+      navToggle.addEventListener('click', () => {
+        const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+        navToggle.setAttribute('aria-expanded', !expanded);
+        mobileMenu.classList.toggle('active');
+      });
+    }
+  });
+  
+  // Fallback for navigation errors
+  window.addEventListener('error', function(e) {
+    if (e.message && e.message.includes('Failed to fetch')) {
+      console.warn('Resource loading error, but continuing...');
+    }
+  });
+  
+  // Prevent directory listing issues
+  if (window.location.protocol === 'file:') {
+    console.log('Running from file:// protocol - navigation using relative paths');
+  }
+</script>
+</body>
+</html>
